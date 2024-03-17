@@ -9,6 +9,9 @@ import categoryRoute from "./routes/categories";
 import multer, { Multer } from "multer";
 import path from "path";
 import cors from "cors";
+
+
+
 dotenv.config();
 const app: Express = express();
 const http =require('http');
@@ -21,6 +24,8 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
 app.use("/images", express.static(path.resolve(__dirname, "src/images")));
+
+// mogodb
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("Connected to MongoDB"))
@@ -38,6 +43,7 @@ const storage= multer.diskStorage({
     cb(null, req.body.name);
   },
 });
+
 app.get('/',(req,res)=>{
   res.send('Hello World');
 })
