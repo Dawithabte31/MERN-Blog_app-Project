@@ -35,7 +35,7 @@ function Navbar() {
           <NavLink to="/setting" key="profileimg" className="hidden md:flex  ">
             {user.profilePic && (
               <img
-                className='profileimage self-end md:ml-8  object-cover h-10 w-10 rounded-full overflow-hidden bg-gray-500 '
+                className='profileimage self-end lg:hidden md:hidden object-cover h-10 w-10 rounded-full overflow-hidden bg-gray-500 '
                 src={PF + user.profilePic}
                 alt='img'
               />

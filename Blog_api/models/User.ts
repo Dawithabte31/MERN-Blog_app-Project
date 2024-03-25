@@ -4,7 +4,7 @@ interface IUser extends Document {
   username: string;
   email: string;
   password: string;
-  profilePic?: string;
+  profilePic: string;
 }
 
 const UserSchema: Schema = new Schema(

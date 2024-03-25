@@ -24,12 +24,14 @@ const SinglePost: React.FC = () => {
     createdAt: "",
     desc: ""
   });
-  const PF="http://localhost:5000/api/images/";
+  const PF="http://localhost:5000/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+  // const [photo,sePhtoto] = useState("");
   const [isDeleted, setIsDeleted] = useState(false);
   const [updateMode, setUpdateMode] = useState(false);
+
 
   useEffect(() => {
     const getPost = async () => {
@@ -40,6 +42,7 @@ const SinglePost: React.FC = () => {
         setPost(res.data);
         setTitle(res.data.title);
         setDesc(res.data.desc);
+        // sePhtoto(res.data.photo)
       } catch (error) {
         console.log(error);
       }
