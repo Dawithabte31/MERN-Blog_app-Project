@@ -1,6 +1,5 @@
 
 import  { NavLink } from 'react-router-dom'
-
 interface Category {
   name: string;
 }
@@ -22,7 +21,7 @@ const Post: React.FC<Props> = ({ post }) => {
   const PF="http://localhost:5000/images/";
 
   return (
-    <div className='Post mx-1'>
+    <div className='Post mx-5 '>
 {post.photo && <img src={PF + post.photo} alt='' />}      
 <div className='Post-Info'>
         <div className='PostCats'>
@@ -34,11 +33,13 @@ const Post: React.FC<Props> = ({ post }) => {
           <span className='postTitle'>{post.title}</span>
         </NavLink>
         <div className=''>      
-          <span className='spanuser text-start mx-4 font-medium'>{post.username}</span>  
+        <NavLink style={{textDecoration:"none",color:"black"}} to={`/post/${post._id}`}>
+        <span  className='spanuser text-start mx-4 font-medium'>{post.username}</span>  
+        </NavLink>
           <span className='postDate text-end mx-10'>{new Date(post.createdAt).toDateString()}</span>
         </div>
+      <p className='postDesc text-start '>{post.desc}</p>
       </div>
-      <p className='postDesc text-start'>{post.desc}</p>
     </div>
   );
 };

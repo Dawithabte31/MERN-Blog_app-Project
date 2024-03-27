@@ -11,7 +11,7 @@ function Navbar() {
     <div className='shadow-md w-full fixed top-0 left-0'>
       <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
         <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] text-gray-800'>
-          <span className='text-3xl text-yellow-500 mr-1 pt-2'>BlogIY</span>
+          <span className='text-3xl text-yellow-500 mr-1 pt-2 font-thin font-sigmar-one'>BlogIY</span>
         </div>
 
         <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
