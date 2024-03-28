@@ -244,7 +244,7 @@ const SinglePost: React.FC = () => {
     );
   }
 
-  if (!post) {
+  if (isDeleted) {
     return <div>No post found!</div>;
   }
 
