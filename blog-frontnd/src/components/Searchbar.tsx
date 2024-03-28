@@ -1,9 +1,6 @@
-
-import  { useEffect, useState } from 'react';
-
+import { useEffect, useState } from "react";
 function Searchbar(): JSX.Element {
   const [isSticky, setIsSticky] = useState(false);
-
   useEffect(() => {
     const handleScroll = (): void => {
       const scrollTop: number = window.pageYOffset;
@@ -11,18 +8,18 @@ function Searchbar(): JSX.Element {
       setIsSticky(scrollTop >= stickyThreshold);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return (): void => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [])
+  }, []);
 
   return (
-    <div className={`Searchbar${isSticky ? ' sticky' : ''}`}>
+    <div className={`Searchbar${isSticky ? " sticky" : ""}`}>
       <form>
         <input type="text" placeholder="Search..." />
-          <i className="fa-solid fa-magnifying-glass"></i>
+        <i className="fa-solid fa-magnifying-glass"></i>
       </form>
     </div>
   );

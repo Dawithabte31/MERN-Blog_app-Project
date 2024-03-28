@@ -7,7 +7,7 @@ function Topbar() {
   // const handleLogout = ()=>{
   // dispatch({type: "LogOut"})
   // };
-  const PF = "http://localhost:5000/images/"
+  const PF = `${import.meta.env.VITE_BASE_URL}images/`
   return (
       <div className='Top-bar '>
       <div className='Top-bar-logo text-white'>

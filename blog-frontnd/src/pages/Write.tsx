@@ -28,14 +28,14 @@ function Write() {
       newPost.photo = filename;
 
       try {
-        await axios.post("http://localhost:5000/api/upload", formData);
+        await axios.post(`${import.meta.env.VITE_BASE_URL}api/upload`, formData);
       } catch (error) {
         console.error(error);
       }
     }
 
     try {
-      await axios.post("http://localhost:5000/api/posts/create", newPost);
+      await axios.post(`${import.meta.env.VITE_BASE_URL}api/posts/create`, newPost);
     } catch (err) {
       console.error(err);
     }

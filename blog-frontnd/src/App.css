@@ -198,6 +198,7 @@
 .postTitle{
   font-family: "Mukta", sans-serif;
   font-style: normal;
+  color: rgb(219, 219, 219);
   font-size: 30px;
   font-weight: 600;
   margin-top: 10px;
@@ -322,6 +323,9 @@ color: tomato;
   cursor: pointer;
   align-self: flex-end;
   margin-top: 20px;
+}
+.singlePostButton:active{
+  background-color: rgb(169, 224, 224);
 }
 .deleted{
   width: 100%;

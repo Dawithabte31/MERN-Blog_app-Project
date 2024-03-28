@@ -19,7 +19,7 @@ function Setting() {
   const [password, setPassword] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/";
+  const PF = `${import.meta.env.VITE_BASE_URL}images/`;
 
   useEffect(() => {
     setUsername(user.username);
@@ -30,7 +30,7 @@ function Setting() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/deleteuser/${user._id}`, {
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}api/users/deleteuser/${user._id}`, {
         data: { username: user.username, userId:user._id, password:user.password },
       });
       window.location.replace("/");
@@ -58,7 +58,7 @@ function Setting() {
       updatedUser.profilePic = filename;
 
       try {
-        await axios.post("http://localhost:5000/api/upload",formData);
+        await axios.post(`${import.meta.env.VITE_BASE_URL}api/upload",formData`);
         setSuccess(true);
       } catch (error) {
         console.log(error);
@@ -67,7 +67,7 @@ function Setting() {
 
     try {
       const res =await axios.put(
-        "http://localhost:5000/api/users/updateuser/"+ user._id,updatedUser
+       ` ${import.meta.env.VITE_BASE_URL}api/users/updateuser/`+ user._id,updatedUser
       );
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });

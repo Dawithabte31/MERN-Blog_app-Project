@@ -11,15 +11,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.6.7",
     "dotenv": "^16.4.5",
     "ionicons": "^7.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-font": "^1.2.1",
+    "react-loading-skeleton": "^3.4.0",
     "react-router-dom": "^6.22.0",
     "socket.io-client": "^4.7.4"
   },

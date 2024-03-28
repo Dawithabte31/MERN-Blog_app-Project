@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useContext, useRef, FormEvent } from "react";
 import { Context } from "../context/Context";
@@ -11,7 +10,7 @@ function Login(): JSX.Element {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}api/auth/login`, {
         username: userRef.current!.value,
         password: passwordRef.current!.value,
       });
@@ -42,7 +41,11 @@ function Login(): JSX.Element {
           placeholder="Enter your password..."
           ref={passwordRef}
         />
-        <button className="loginButton  bg-[#FFA726] text-white font-bold py-0 px-4 rounded" type="submit" disabled={isFetching}>
+        <button
+          className="loginButton  bg-[#FFA726] text-white font-bold py-0 px-4 rounded"
+          type="submit"
+          disabled={isFetching}
+        >
           Login
         </button>
       </form>
