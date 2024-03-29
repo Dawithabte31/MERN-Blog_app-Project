@@ -13,9 +13,9 @@ function Register() {
     setError(false)
     try {
       const res = await axios.post(`${import.meta.env.VITE_BASE_URL}api/auth/register`, {
-        password: password,
-        email: email,
-        username: username
+        password:  password,
+        email:  email,
+        username:  username
       });
       res.data && window.location.replace('/login');
     } catch (error) {
